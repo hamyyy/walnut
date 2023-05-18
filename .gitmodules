@@ -1,9 +1,10 @@
-[submodule "Walnut/vendor/imgui"]
-	path = Walnut/vendor/imgui
-	url = https://github.com/ocornut/imgui
 [submodule "Walnut/vendor/glm"]
 	path = Walnut/vendor/glm
 	url = https://github.com/g-truc/glm
 [submodule "Walnut/vendor/glfw"]
 	path = Walnut/vendor/glfw
 	url = https://github.com/glfw/glfw
+[submodule "Walnut/vendor/imgui"]
+	path = Walnut/vendor/imgui
+	url = https://github.com/ocornut/imgui
+	branch = docking

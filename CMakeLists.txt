@@ -6,6 +6,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # add_compile_definitions("NDEBUG")
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/modules")
+
 add_subdirectory(Walnut)
 add_subdirectory(WalnutApp)
 

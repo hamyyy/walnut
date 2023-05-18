@@ -30,7 +30,14 @@ add_subdirectory(vendor/glfw)
 add_subdirectory(vendor/glm)
 
 # imgui
-add_subdirectory(vendor/imgui)
+file(GLOB IMGUI_SRC
+	"vendor/imgui/*.cpp"
+	"vendor/imgui/backends/imgui_impl_glfw.cpp"
+	"vendor/imgui/backends/imgui_impl_vulkan.cpp"
+)
+add_library(imgui STATIC ${IMGUI_SRC})
+target_link_libraries(imgui PUBLIC glfw)
+target_include_directories(imgui PUBLIC "vendor/imgui")
 
 #stb-image
 add_subdirectory(vendor/stb-image)
