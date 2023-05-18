@@ -1,7 +1,10 @@
 # Directories
 .vs/
+.cache
+.vscode/
 bin/
 bin-int/
+build
 
 # Files
 *.vcxproj
@@ -9,5 +12,5 @@ bin-int/
 *.vcxproj.filters
 *.sln
 
-# Exclude
-!vendor/bin
+# Cmake
+compile_commands.json

@@ -16,9 +16,6 @@
 
 #include <iostream>
 
-// Emedded font
-#include "ImGui/Roboto-Regular.embed"
-
 extern bool g_ApplicationRunning;
 
 // [Win32] Our example includes a copy of glfw3.lib pre-compiled with VS2010 to maximize ease of testing and compatibility with old VS compilers.
@@ -481,12 +478,6 @@ namespace Walnut {
 		init_info.Allocator = g_Allocator;
 		init_info.CheckVkResultFn = check_vk_result;
 		ImGui_ImplVulkan_Init(&init_info, wd->RenderPass);
-
-		// Load default font
-		ImFontConfig fontConfig;
-		fontConfig.FontDataOwnedByAtlas = false;
-		ImFont* robotoFont = io.Fonts->AddFontFromMemoryTTF((void*)g_RobotoRegular, sizeof(g_RobotoRegular), 20.0f, &fontConfig);
-		io.FontDefault = robotoFont;
 
 		// Upload Fonts
 		{
