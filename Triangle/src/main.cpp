@@ -4,6 +4,18 @@
 class ExampleLayer : public Walnut::Layer
 {
 public:
+	virtual void OnAttach() override
+	{
+		auto &io = ImGui::GetIO();
+		// io.ConfigFlags &= ~ImGuiConfigFlags_ViewportsEnable; 
+		// io.ConfigDockingAlwaysTabBar = true;
+		// io.ConfigViewportsNoDefaultParent = true;
+	}
+
+	virtual void OnUpdate(float ts) override
+	{
+	}
+
 	virtual void OnUIRender() override
 	{
 		ImGui::Begin("Hello");
@@ -17,7 +29,7 @@ public:
 Walnut::Application *Walnut::CreateApplication(int argc, char **argv)
 {
 	Walnut::ApplicationSpecification spec;
-	spec.Name = "Walnut Example";
+	spec.Name = "Vulkan Triangle Demo";
 
 	Walnut::Application *app = new Walnut::Application(spec);
 	app->PushLayer<ExampleLayer>();
